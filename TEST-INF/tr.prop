@@ -1,0 +1,32 @@
+#
+# Copyright Ian Johnson 2012
+#
+# This file is part of TestRobot.
+#
+# TestRobot is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# TestRobot is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with TestRobot.  If not, see <http://www.gnu.org/licenses/>.
+#
+log4j.rootLogger=debug, stdout, A1
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+# Pattern to output the caller's file name and line number.
+log4j.appender.stdout.layout.ConversionPattern=%d [%t] %-5p %c - %m%n
+
+log4j.appender.A1=org.apache.log4j.RollingFileAppender
+log4j.appender.A1.File=tr.log
+log4j.appender.A1.MaxFileSize=1MB
+log4j.appender.A1.MaxBackupIndex=10
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+# Print the date in ISO 8601 format
+log4j.appender.A1.layout.ConversionPattern=%d [%t] %-5p %c - %m%n

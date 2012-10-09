@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright Ian Johnson 2012
+
+ This file is part of TestRobot.
+
+ TestRobot is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ TestRobot is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with TestRobot.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<tests>
+  <!-- Defines a org.splandroid.tr.extensions.simpledemo.Demo test instance -->
+	<testcase id="test_case_1" description="A demo test case">
+    <!-- Only one capability is allowed in a testcase -->
+		<simpleDemo
+			boolean="true"
+			double="3.141"
+			float="2.718"
+			long="667"
+			integer="27"
+			string="Hello world"
+			custom="7:49">
+      <!-- Defines a test method -->
+			<checkValues
+				targetBoolean="false"
+				targetDouble="-3.141"
+				targetFloat="-2.718"
+				targetLong="-667"
+				targetInteger="-27"
+				targetString="dlrow olleH"
+				targetCustom="49:7">
+			</checkValues>
+		</simpleDemo>
+	</testcase>
+
+	<!-- Defines a org.splandroid.tr.extensions.simpledemo.Demo test instance -->
+	<testcase id="test_case_2" description="Another demo test case">
+  	<!-- Only one capability is allowed in a testcase -->
+		<simpleDemo
+			boolean="false"
+			double="-3.141"
+			float="-2.718"
+			long="-667"
+			integer="-27"
+			string="dlrow olleH"
+			custom="49:7">
+      <!-- Defines a test method -->
+			<checkValues
+				targetBoolean="true"
+				targetDouble="3.141"
+				targetFloat="2.718"
+				targetLong="667"
+				targetInteger="27"
+				targetString="Hello world"
+				targetCustom="7:49">
+			</checkValues>
+		</simpleDemo>
+	</testcase>
+	
+	<!-- Defines a org.splandroid.tr.extensions.simpledemo.Demo test instance -->
+	<testcase id="test_case_3" description="A demo test case with argument substitution">
+  	<!-- Only one capability is allowed in a testcase -->
+		<simpleDemo
+			boolean="true"
+			double="3.141"
+			float="2.718"
+			long="667"
+			integer="27"
+			string="Hello world %boolean%"
+			custom="%long%:%integer%">
+      <!-- Defines a test method -->
+			<checkValues
+				targetBoolean="false"
+				targetDouble="-3.141"
+				targetFloat="-2.718"
+				targetLong="-667"
+				targetInteger="-27"
+				targetString="eurt dlrow olleH"
+				targetCustom="27:667">
+			</checkValues>
+		</simpleDemo>
+	</testcase>
+	
+  <!-- Defines a org.splandroid.tr.extensions.simpledemo.DemoFailed test instance -->
+  <testcase id="test_case_4" description="A demo of failing tests">
+    <!-- Only one capability is allowed in a testcase -->
+    <failureDemo>
+      Defines a test method
+      <assertFailure>
+      </assertFailure>
+      Defines a test method
+      <failed>
+      </failed>
+      <!-- Defines a test method that is missing from the class -->
+      <missing>
+      </missing>
+    </failureDemo>
+  </testcase>
+</tests>

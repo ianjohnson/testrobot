@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright Ian Johnson 2012
+
+ This file is part of TestRobot.
+
+ TestRobot is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ TestRobot is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with TestRobot.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<profile>
+	<capability
+		id="simpleDemo"
+		description="A simple demo to show a test using some base Java types"
+		class="org.splandroid.tr.extensions.simpledemo.Demo">
+		<arguments>
+			<argument id="boolean" kind="java.lang.Boolean"/>
+			<argument id="double" kind="java.lang.Double"/>
+			<argument id="float" kind="java.lang.Float"/>
+			<argument id="long" kind="java.lang.Long"/>
+			<argument id="integer" kind="java.lang.Integer"/>
+			<argument id="string" kind="java.lang.String"/>
+			<argument id="custom" kind="org.splandroid.tr.extensions.simpledemo.IntegerPair"/>
+		</arguments>
+		<test id="checkValues">
+			<arguments>
+				<argument id="targetBoolean" kind="java.lang.Boolean"/>
+    	        <argument id="targetDouble" kind="java.lang.Double"/>
+        	    <argument id="targetFloat" kind="java.lang.Float"/>
+            	<argument id="targetLong" kind="java.lang.Long"/>
+        	    <argument id="targetInteger" kind="java.lang.Integer"/>
+           		<argument id="targetString" kind="java.lang.String"/>
+            	<argument id="targetCustom" kind="org.splandroid.tr.extensions.simpledemo.IntegerPair"/>
+			</arguments>	
+		</test>
+	</capability>
+	
+	<capability
+		id="failureDemo"
+		description="A simple demo to show failing tests"
+		class="org.splandroid.tr.extensions.simpledemo.DemoFailed">
+		<test id="assertFailure">
+		</test>
+		<test id="failed">
+		</test>
+		<test id="missing">
+		</test>
+	</capability>
+</profile>
